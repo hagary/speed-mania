@@ -5,6 +5,7 @@ using UnityEngine;
 public class Car_Move : MonoBehaviour {
 	public float rlSpeed = 3f;
 	public float fSpeed = 5f;
+	public float jSpeed = 4f;
 	// Use this for initialization
 	void Start () {
 		
@@ -17,12 +18,18 @@ public class Car_Move : MonoBehaviour {
 		 */
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		moveHorizontal = moveHorizontal * rlSpeed * Time.deltaTime;
-		transform.Translate (moveHorizontal, 0, 0);
 
 		/*
 		 * Forward Movement (Automatic)
 		 */
 		float moveForward = rlSpeed * Time.deltaTime;
-		transform.Translate (0, 0, moveForward);
+
+		/*
+		 * Jump (Input) 
+		 */
+		float jump = Input.GetAxis ("Jump");
+		jump = jump * jSpeed * Time.deltaTime;
+
+		transform.Translate (moveHorizontal, jump, moveForward + jump/2);
 	}
 }
