@@ -30,6 +30,6 @@ public class Car_Move : MonoBehaviour {
 		float jump = Input.GetAxis ("Jump");
 		jump = jump * jSpeed * Time.deltaTime;
 
-		transform.Translate (moveHorizontal, jump, moveForward + jump/2);
+		transform.Translate (moveHorizontal, jump, moveForward + jump);
 	}
 }
