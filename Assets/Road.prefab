@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 65433497942700286}
   - component: {fileID: 23014229944482976}
   - component: {fileID: 54758659840908360}
+  - component: {fileID: 114655786095392132}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -96,7 +97,7 @@ GameObject:
   - component: {fileID: 65899647762044546}
   - component: {fileID: 23755732591017542}
   m_Layer: 0
-  m_Name: Floor
+  m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,8 +128,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1933153523835570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.064651, y: 0.9976, z: 0}
-  m_LocalScale: {x: 29.490406, y: 0.059118837, z: 144.87544}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 30, y: 0.05, z: 150}
   m_Children:
   - {fileID: 4314446802394958}
   - {fileID: 4738254843844222}
@@ -172,7 +173,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1858943152608830}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.167, y: 1, z: 0}
+  m_LocalPosition: {x: -0.2, y: 1, z: 0}
   m_LocalScale: {x: 0.05, y: 0.00001, z: 1}
   m_Children: []
   m_Father: {fileID: 4108103794501798}
@@ -185,7 +186,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1934489242771232}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.234, y: 0.99999905, z: 0}
+  m_LocalPosition: {x: 0.2, y: 1, z: 0}
   m_LocalScale: {x: 0.050000004, y: 0.00001, z: 1}
   m_Children: []
   m_Father: {fileID: 4108103794501798}
@@ -526,3 +527,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114655786095392132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1627026263805656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c97889e6ace488196ee6a7dbb81e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translateZ: 50
+  road: {fileID: 0}
