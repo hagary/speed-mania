@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33155400631998132}
   - component: {fileID: 136931635815655052}
   - component: {fileID: 23524497744465900}
+  - component: {fileID: 114777110454381694}
   m_Layer: 0
   m_Name: Radar
   m_TagString: Untagged
@@ -81,6 +82,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1245224221993898}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114777110454381694
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1245224221993898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b75590c1d5774660aefe0a851037293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distTolerance: 10
 --- !u!136 &136931635815655052
 CapsuleCollider:
   m_ObjectHideFlags: 1

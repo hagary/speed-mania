@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33196244822910614}
   - component: {fileID: 136674332430059404}
   - component: {fileID: 23188533100918444}
-  - component: {fileID: 114767890075201884}
+  - component: {fileID: 114888743781196436}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -82,7 +82,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1649614716228208}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114767890075201884
+--- !u!114 &114888743781196436
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -90,12 +90,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1649614716228208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30e0ff051f7944b38a26e74aae90e6e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b75590c1d5774660aefe0a851037293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rlSpeed: 1
-  fSpeed: 5
-  jSpeed: 4
+  distTolerance: 10
 --- !u!136 &136674332430059404
 CapsuleCollider:
   m_ObjectHideFlags: 1
