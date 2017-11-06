@@ -30,8 +30,6 @@ public class Gen_Objs : MonoBehaviour
 		int objectType = Random.Range (1, 4);
 		int laneNumber = Random.Range (-1, 2);
 		GameObject prefabToInst = null;
-		print ("Object num: " + objectType);
-		print ("Lane num: " + laneNumber);
 		/*
 		 * Choose a random object to instantiate.
 		 */
