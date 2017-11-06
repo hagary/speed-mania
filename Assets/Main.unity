@@ -1437,7 +1437,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 4003d3cc92a764ae3b79e35b91ee52a6, type: 3}
+    m_Font: {fileID: 12800000, guid: e768a594285cd428da4384e40caa4146, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -1445,11 +1445,11 @@ MonoBehaviour:
     m_MaxSize: 48
     m_Alignment: 4
     m_AlignByGeometry: 0
-    m_RichText: 0
+    m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: score
+  m_Text: 'SCORE:'
 --- !u!222 &538585965
 CanvasRenderer:
   m_ObjectHideFlags: 0

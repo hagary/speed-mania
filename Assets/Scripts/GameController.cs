@@ -58,7 +58,7 @@ public class GameController : MonoBehaviour
 
 	void UpdateScore ()
 	{	
-		scoreText.text = "score: " + score;
+		scoreText.text = "SCORE: " + score;
 	}
 
 	public void AddScore (int addValue)
