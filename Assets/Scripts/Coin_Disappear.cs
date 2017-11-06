@@ -24,7 +24,7 @@ public class Coin_Disappear : MonoBehaviour
 			GameObject gameControllerObject = GameObject.FindWithTag ("GameController");
 			GameController gameController = gameControllerObject.GetComponent <GameController> ();
 			gameController.AddScore (10);
-
+			other.GetComponent <CarController>().soundEffect (Effect.COIN);
 			Destroy (gameObject);
 		}
 	}
