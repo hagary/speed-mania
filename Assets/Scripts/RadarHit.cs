@@ -20,6 +20,7 @@ public class RadarHit : MonoBehaviour
 	void OnTriggerEnter (Collider other)
 	{
 		if (other.tag == "Player") {
+			other.GetComponent <CarController>().soundEffect (Effect.RADAR);
 			//Update score
 			GameObject gameControllerObject = GameObject.FindWithTag ("GameController");
 			GameController gameController = gameControllerObject.GetComponent <GameController> ();
