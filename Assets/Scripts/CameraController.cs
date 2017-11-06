@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera_Controller : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
 	public bool fpsMode = false;
 	public GameObject FPS;

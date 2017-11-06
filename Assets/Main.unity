@@ -769,7 +769,7 @@ RectTransform:
   m_Children:
   - {fileID: 538585963}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1243,7 +1243,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1180691931
 GameObject:
@@ -1333,6 +1333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1329420522}
   - component: {fileID: 1329420523}
+  - component: {fileID: 1329420524}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -1351,7 +1352,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1329420523
 MonoBehaviour:
@@ -1366,6 +1367,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseCanvas: {fileID: 1380967121}
   scoreText: {fileID: 538585964}
+--- !u!114 &1329420524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1329420521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e167c26a63240e28dd02b10233d60a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinPrefab: {fileID: 1649614716228208, guid: 8f8a043cce5334b0599c93172cedf0d5, type: 2}
+  obstaclePrefab: {fileID: 1295867204497548, guid: 498d31464e619474d95461b09ce4b190,
+    type: 2}
+  radarPrefab: {fileID: 1245224221993898, guid: 7b9d7dd345e404fb79f7b974df073dbd,
+    type: 2}
+  road: {fileID: 1276283727}
 --- !u!1 &1380967117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,7 +1473,7 @@ RectTransform:
   - {fileID: 2107698474}
   - {fileID: 192029960}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1495,7 +1513,6 @@ GameObject:
   - component: {fileID: 1607184175}
   - component: {fileID: 1607184178}
   - component: {fileID: 1607184179}
-  - component: {fileID: 1607184180}
   m_Layer: 0
   m_Name: Car
   m_TagString: Player
@@ -1594,29 +1611,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1607184173}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30e0ff051f7944b38a26e74aae90e6e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f3a1f59a70f545858013be827522434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rlSpeed: 10
   fSpeed: 20
   jSpeed: 15
---- !u!114 &1607184180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1607184173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ee5df73c9efa438397dd5d7a0805d00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinPrefab: {fileID: 1649614716228208, guid: 8f8a043cce5334b0599c93172cedf0d5, type: 2}
-  obstaclePrefab: {fileID: 1295867204497548, guid: 498d31464e619474d95461b09ce4b190,
-    type: 2}
-  radarPrefab: {fileID: 1245224221993898, guid: 7b9d7dd345e404fb79f7b974df073dbd,
-    type: 2}
-  road: {fileID: 1276283727}
 --- !u!1 &1740175697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1641,7 +1641,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1740175697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 966edcc967a9a45a0b0dcb77a1f09645, type: 3}
+  m_Script: {fileID: 11500000, guid: c71362761603f46b1a3caff821c8fbcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fpsMode: 0
@@ -1658,7 +1658,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1820790338
 GameObject:

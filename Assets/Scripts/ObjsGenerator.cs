@@ -2,28 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gen_Objs : MonoBehaviour
+public class ObjsGenerator: MonoBehaviour
 {
 	public GameObject coinPrefab;
 	public GameObject obstaclePrefab;
 	public GameObject radarPrefab;
 	public Transform road;
+	private Transform car;
 	float lastCarPosition;
 	float distToObstacle;
 	float distToRepeat;
 
-	// Use this for initialization
+	// Use this for initializations
 	void Start ()
 	{
 		lastCarPosition = Mathf.NegativeInfinity;
-		distToObstacle = 50;
-		distToRepeat = 50;
+		distToObstacle = 20;
+		distToRepeat = 20;
+		car = GameObject.FindWithTag ("Player").transform;
 	}
 
 	// Update is called once per frame
 	void Update ()
 	{
-		float currCarPosition = transform.position.z;
+		float currCarPosition = car.position.z;
 		if (currCarPosition < lastCarPosition + distToRepeat)
 			return;
 		
