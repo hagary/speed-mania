@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Car_Move : MonoBehaviour {
+public class Car_Move : MonoBehaviour
+{
 	public float rlSpeed = 3f;
 	public float fSpeed = 5f;
 	public float jSpeed = 4f;
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		/*
 		 * Horizontal Movement (Input)
 		 */

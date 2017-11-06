@@ -45,7 +45,7 @@ public class Gen_Objs : MonoBehaviour
 			laneNumber = 0; //middle lane
 			break;
 		}
-		Instantiate (prefabToInst, new Vector3 (laneNumber*10f, 0, currCarPosition + distToObstacle), prefabToInst.transform.rotation);
+		Instantiate (prefabToInst, new Vector3 (laneNumber * 10f, 0, currCarPosition + distToObstacle), prefabToInst.transform.rotation);
 		lastCarPosition = currCarPosition;
 	}
 }
