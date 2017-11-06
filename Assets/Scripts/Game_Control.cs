@@ -2,14 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class Game_Control : MonoBehaviour
 {
 	public Transform pauseCanvas;
 	bool paused;
+
+	public Text scoreText;
+	private int score;
 	// Use this for initialization
 	void Start ()
-	{
+	{	
+		/*
+		 * Score related setup.
+		 */
+		score = 0;
+		UpdateScore ();
+		/*
+		 * Pause menu related setup.
+		 */
 		paused = false;
 		pauseCanvas.gameObject.SetActive (paused);
 	}
@@ -22,6 +33,16 @@ public class Game_Control : MonoBehaviour
 		}
 	}
 
+	void UpdateScore ()
+	{
+		scoreText.text = "Score: " + score;
+	}
+	public void AddScore (int addValue)
+	{
+		score += addValue;
+		UpdateScore ();
+	}
+
 	public void Pause ()
 	{
 		paused = !paused;
@@ -31,10 +52,11 @@ public class Game_Control : MonoBehaviour
 
 	public void Quit ()
 	{
-		Application.Quit();
+		Application.Quit ();
 	}
 
-	public void Restart(){
+	public void Restart ()
+	{
 		SceneManager.LoadScene ("Main");
 		Time.timeScale = 1;
 	}
