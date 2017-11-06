@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
 	public Transform pauseCanvas;
+	public Transform gameOverCanvas;
 	bool paused;
 
 	public Text scoreText;
@@ -73,5 +74,11 @@ public class GameController : MonoBehaviour
 	{
 		SceneManager.LoadScene ("Main");
 		Time.timeScale = 1;
+	}
+
+	public void EndGame ()
+	{
+		gameOverCanvas.gameObject.SetActive (true);
+		Time.timeScale = 0;
 	}
 }
