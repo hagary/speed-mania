@@ -9,7 +9,8 @@ public class Game_Control : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		paused = false;	
+		paused = false;
+		pauseCanvas.gameObject.SetActive (paused);
 	}
 	
 	// Update is called once per frame
