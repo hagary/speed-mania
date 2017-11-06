@@ -28,12 +28,10 @@ public class CameraController : MonoBehaviour
 	void Update ()
 	{
 		if (Input.GetKeyDown (KeyCode.C)) {
-			print ("Switched here");
 			switchCamera ();
 		}
 	}
 	public void switchCamera(){
-		print ("camera switched");
 		fpsMode = !fpsMode;
 		FPS.SetActive (fpsMode);
 		TPS.SetActive (!fpsMode);

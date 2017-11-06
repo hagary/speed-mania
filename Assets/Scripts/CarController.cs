@@ -77,14 +77,12 @@ public class CarController : MonoBehaviour
 	public void IncreaseSpeed ()
 	{
 		fSpeed += incSpeed;
-		print ("Speed increased: " + fSpeed);
 	}
 
 	public void DecreaseSpeed ()
 	{
 		fSpeed -= incSpeed;
 		fSpeed = fSpeed < originalFSpeed ? originalFSpeed : fSpeed;
-		print ("Speed decreased: " + fSpeed);
 	}
 }
 
