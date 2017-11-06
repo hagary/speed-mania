@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-	public bool fpsMode = false;
+	private bool fpsMode = false;
+	bool playing;
 	public GameObject FPS;
 	public GameObject TPS;
+	public AudioClip fastClip;
+	public AudioClip slowClip;
+
+	private AudioSource audioSource;
 	// Use this for initialization
 	void Start ()
 	{
+		playing = false;
+		fpsMode = false;
 		FPS.SetActive (fpsMode);
+		audioSource = GetComponent <AudioSource> ();
+		audioSource.playOnAwake = true;
+		audioSource.clip = slowClip;
 	}
 	
 	// Update is called once per frame
@@ -21,5 +31,15 @@ public class CameraController : MonoBehaviour
 			FPS.SetActive (fpsMode);
 			TPS.SetActive (!fpsMode);
 		}
+	}
+
+	public void switchSound(){
+		playing = !playing;
+		audioSource.Stop ();
+		if (playing)
+			audioSource.clip = fastClip;
+		else
+			audioSource.clip = slowClip;
+		audioSource.Play ();
 	}
 }

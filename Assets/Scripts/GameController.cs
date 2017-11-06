@@ -71,6 +71,7 @@ public class GameController : MonoBehaviour
 	{
 		paused = !paused;
 		pauseCanvas.gameObject.SetActive (paused);
+		GameObject.FindWithTag ("CameraController").GetComponent <CameraController>().switchSound ();
 		Time.timeScale = paused ? 0 : 1;
 	}
 
@@ -88,6 +89,7 @@ public class GameController : MonoBehaviour
 	{
 		titleCanvas.gameObject.SetActive (false);
 		playCanvas.gameObject.SetActive (true);
+		GameObject.FindWithTag ("CameraController").GetComponent <CameraController>().switchSound ();
 		Time.timeScale = 1;
 	}
 
@@ -95,12 +97,19 @@ public class GameController : MonoBehaviour
 	{
 		gameOverCanvas.gameObject.SetActive (true);
 		playCanvas.gameObject.SetActive (false);
+		GameObject.FindWithTag ("CameraController").GetComponent <CameraController>().switchSound ();
 		Time.timeScale = 0;
 	}
 
 	public void Mute ()
 	{
 		muted = !muted;
-		AudioListener.volume = muted? 0: 1;
+		AudioSource audio = GameObject.FindWithTag ("CameraController").GetComponent <AudioSource>();
+		audio.mute = muted;
+		if (muted) {
+			audio.Pause ();
+		} else {
+			audio.Play ();
+		}
 	}
 }
