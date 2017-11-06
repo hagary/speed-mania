@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pause_Control : MonoBehaviour
+public class Game_Control : MonoBehaviour
 {
 	public Transform pauseCanvas;
 	bool paused;
@@ -25,5 +25,10 @@ public class Pause_Control : MonoBehaviour
 		paused = !paused;
 		pauseCanvas.gameObject.SetActive (paused);
 		Time.timeScale = paused ? 0 : 1;
+	}
+
+	public void Quit ()
+	{
+		Application.Quit();
 	}
 }
