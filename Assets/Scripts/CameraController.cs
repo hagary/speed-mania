@@ -18,6 +18,7 @@ public class CameraController : MonoBehaviour
 		playing = false;
 		fpsMode = false;
 		FPS.SetActive (fpsMode);
+		TPS.SetActive (!fpsMode);
 		audioSource = GetComponent <AudioSource> ();
 		audioSource.playOnAwake = true;
 		audioSource.clip = slowClip;
@@ -27,12 +28,16 @@ public class CameraController : MonoBehaviour
 	void Update ()
 	{
 		if (Input.GetKeyDown (KeyCode.C)) {
-			fpsMode = !fpsMode;
-			FPS.SetActive (fpsMode);
-			TPS.SetActive (!fpsMode);
+			print ("Switched here");
+			switchCamera ();
 		}
 	}
-
+	public void switchCamera(){
+		print ("camera switched");
+		fpsMode = !fpsMode;
+		FPS.SetActive (fpsMode);
+		TPS.SetActive (!fpsMode);
+	}
 	public void switchSound(){
 		playing = !playing;
 		audioSource.Stop ();

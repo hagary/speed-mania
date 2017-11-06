@@ -14,6 +14,7 @@ public class CarController : MonoBehaviour
 	private float fSpeed;
 	private float jSpeed;
 	private float incSpeed;
+	private bool instantJump;
 	// Use this for initialization
 	void Start ()
 	{
@@ -21,6 +22,7 @@ public class CarController : MonoBehaviour
 		jSpeed = 15f;
 		originalFSpeed = fSpeed = 10f;
 		rlSpeed = 10f;
+		instantJump = false;
 	}
 		
 	// Update is called once per frame
@@ -48,10 +50,10 @@ public class CarController : MonoBehaviour
 		float jump = Input.GetAxis ("Jump");
 		jump = jump * jSpeed * Time.deltaTime;
 
-		transform.Translate (moveHorizontal , jump, moveForward + jump);
+		transform.Translate (moveHorizontal , jump, moveForward);
 	}
-	public void Jump(){
-		
+	public void InstantJump(){
+		transform.Translate (0 , jSpeed * Time.deltaTime *10, fSpeed * Time.deltaTime);
 	}
 	public void soundEffect (Effect e)
 	{	

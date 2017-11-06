@@ -27,6 +27,8 @@ public class GameController : MonoBehaviour
 		/*
 		 * Game start setup.
 		 */
+		titleCanvas.gameObject.SetActive (true);
+		playCanvas.gameObject.SetActive (false);
 		Time.timeScale = 0;
 		muted = false;
 		showHow = false;
