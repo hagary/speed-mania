@@ -1334,8 +1334,8 @@ GameObject:
   - component: {fileID: 1329420522}
   - component: {fileID: 1329420523}
   m_Layer: 0
-  m_Name: UIController
-  m_TagString: Untagged
+  m_Name: GameController
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1361,7 +1361,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1329420521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc0d360389a694b3cb47aa7f8d4ba664, type: 3}
+  m_Script: {fileID: 11500000, guid: faec1a3ff28d140abb800ac76f9c82d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pauseCanvas: {fileID: 1380967121}

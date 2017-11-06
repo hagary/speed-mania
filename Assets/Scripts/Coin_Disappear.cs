@@ -20,6 +20,11 @@ public class Coin_Disappear : MonoBehaviour
 	void OnTriggerEnter (Collider other)
 	{
 		if (other.tag == "Player") {
+			//Update score
+			GameObject gameControllerObject = GameObject.Find ("GameController");
+			GameController gameController = gameControllerObject.GetComponent <GameController> ();
+			gameController.AddScore (10);
+
 			Destroy (gameObject);
 		}
 	}
