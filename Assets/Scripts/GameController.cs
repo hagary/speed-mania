@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 public class GameController : MonoBehaviour
 {
 	public Transform pauseCanvas;
@@ -34,9 +35,13 @@ public class GameController : MonoBehaviour
 	}
 
 	void UpdateScore ()
-	{
+	{	
+		if (score > 0 && score % 50 == 0)
+			//Increase car speed
+			GameObject.FindWithTag ("Player").GetComponent <CarController> ().IncreaseSpeed ();
 		scoreText.text = "Score: " + score;
 	}
+
 	public void AddScore (int addValue)
 	{
 		score += addValue;

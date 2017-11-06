@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-	public float rlSpeed = 3f;
-	public float fSpeed = 5f;
-	public float jSpeed = 4f;
+	public float rlSpeed;
+	public float fSpeed;
+	public float jSpeed;
+	private float incSpeed;
 	// Use this for initialization
 	void Start ()
 	{
-		
+		incSpeed = 5;
+		jSpeed = 15f;
+		fSpeed = 10f;
+		rlSpeed = 10f;
 	}
-	
+		
 	// Update is called once per frame
 	void Update ()
 	{
@@ -25,7 +29,7 @@ public class CarController : MonoBehaviour
 		/*
 		 * Forward Movement (Automatic)
 		 */
-		float moveForward = rlSpeed * Time.deltaTime;
+		float moveForward = fSpeed * Time.deltaTime;
 
 		/*
 		 * Jump (Input) 
@@ -34,5 +38,10 @@ public class CarController : MonoBehaviour
 		jump = jump * jSpeed * Time.deltaTime;
 
 		transform.Translate (moveHorizontal, jump, moveForward + jump);
+	}
+
+	public void IncreaseSpeed(){
+		fSpeed += incSpeed;
+		print ("Speed increased: " + fSpeed);
 	}
 }

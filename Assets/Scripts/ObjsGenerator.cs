@@ -52,7 +52,6 @@ public class ObjsGenerator: MonoBehaviour
 			laneNumber = 0; //middle lane
 			break;
 		}
-
 		Instantiate (prefabToInst, new Vector3 (laneNumber * 10f, scaleFactor, currCarPosition + distToObstacle), prefabToInst.transform.rotation);
 		lastCarPosition = currCarPosition;
 	}

@@ -1615,7 +1615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rlSpeed: 10
-  fSpeed: 20
+  fSpeed: 10
   jSpeed: 15
 --- !u!1 &1740175697
 GameObject:
