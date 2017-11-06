@@ -30,22 +30,28 @@ public class Gen_Objs : MonoBehaviour
 		int objectType = Random.Range (1, 4);
 		int laneNumber = Random.Range (-1, 2);
 		GameObject prefabToInst = null;
+		float scaleFactor = 0f;
+
 		/*
 		 * Choose a random object to instantiate.
 		 */
 		switch (objectType) {
 		case 1:
 			prefabToInst = coinPrefab;
+			scaleFactor = prefabToInst.transform.localScale.y / 2;
 			break;
 		case 2:
 			prefabToInst = obstaclePrefab;
+			scaleFactor = prefabToInst.transform.localScale.y / 2;
 			break;
 		case 3:
 			prefabToInst = radarPrefab;
+			scaleFactor = prefabToInst.transform.localScale.x / 2; //since it's rotated
 			laneNumber = 0; //middle lane
 			break;
 		}
-		Instantiate (prefabToInst, new Vector3 (laneNumber * 10f, 0, currCarPosition + distToObstacle), prefabToInst.transform.rotation);
+
+		Instantiate (prefabToInst, new Vector3 (laneNumber * 10f, scaleFactor, currCarPosition + distToObstacle), prefabToInst.transform.rotation);
 		lastCarPosition = currCarPosition;
 	}
 }

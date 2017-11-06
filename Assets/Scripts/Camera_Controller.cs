@@ -16,7 +16,7 @@ public class Camera_Controller : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Input.GetKeyDown ("escape")) {
+		if (Input.GetKeyDown (KeyCode.Escape)) {
 			fpsMode = !fpsMode;
 			FPS.SetActive (fpsMode);
 			TPS.SetActive (!fpsMode);
