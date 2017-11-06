@@ -26,11 +26,16 @@ public class CarController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		carMove ();
+		if (Input.GetButtonDown ("Jump"))
+			soundEffect (Effect.JUMP);
+	}
+	void carMove(){
 		/*
 		 * Horizontal Movement (Input)
 		 */
 		float moveHorizontal = Input.GetAxis ("Horizontal");
-		moveHorizontal = moveHorizontal * rlSpeed * Time.deltaTime;
+		moveHorizontal = (moveHorizontal + Input.acceleration.x) * rlSpeed * Time.deltaTime;
 
 		/*
 		 * Forward Movement (Automatic)
@@ -43,11 +48,11 @@ public class CarController : MonoBehaviour
 		float jump = Input.GetAxis ("Jump");
 		jump = jump * jSpeed * Time.deltaTime;
 
-		transform.Translate (moveHorizontal, jump, moveForward + jump);
-		if (Input.GetButtonDown ("Jump"))
-			soundEffect (Effect.JUMP);
+		transform.Translate (moveHorizontal , jump, moveForward + jump);
 	}
-
+	public void Jump(){
+		
+	}
 	public void soundEffect (Effect e)
 	{	
 		AudioClip clip = null;
