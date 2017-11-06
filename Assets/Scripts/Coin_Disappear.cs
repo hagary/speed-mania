@@ -21,7 +21,7 @@ public class Coin_Disappear : MonoBehaviour
 	{
 		if (other.tag == "Player") {
 			//Update score
-			GameObject gameControllerObject = GameObject.Find ("GameController");
+			GameObject gameControllerObject = GameObject.FindWithTag ("GameController");
 			GameController gameController = gameControllerObject.GetComponent <GameController> ();
 			gameController.AddScore (10);
 
