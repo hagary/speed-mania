@@ -118,12 +118,14 @@ public class GameController : MonoBehaviour
 	public void Mute ()
 	{
 		muted = !muted;
-		AudioSource audio = GameObject.FindWithTag ("CameraController").GetComponent <AudioSource> ();
-		audio.mute = muted;
+		AudioSource[] audios = GameObject.FindWithTag ("CameraController").GetComponents <AudioSource> ();
+		audios [0].mute = muted;
+		audios [1].mute = muted;
 		if (muted) {
-			audio.Pause ();
+			audios [0].Stop ();
+			audios [1].Stop ();
 		} else {
-			audio.Play ();
+			audios [0].Play ();
 		}
 	}
 
@@ -132,6 +134,7 @@ public class GameController : MonoBehaviour
 		showHow = !showHow;
 		howMenu.gameObject.SetActive (showHow);
 	}
+
 	public void ShowCredits ()
 	{
 		showCredits = !showCredits;

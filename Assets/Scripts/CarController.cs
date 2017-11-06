@@ -20,7 +20,7 @@ public class CarController : MonoBehaviour
 		incSpeed = 5;
 		jSpeed = 15f;
 		originalFSpeed = fSpeed = 10f;
-		rlSpeed = 10f;
+		rlSpeed = 15f;
 	}
 		
 	// Update is called once per frame
