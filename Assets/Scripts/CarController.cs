@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-	public float rlSpeed;
-	public float fSpeed;
-	public float jSpeed;
+	private float originalFSpeed;
+	private float rlSpeed;
+	private float fSpeed;
+	private float jSpeed;
 	private float incSpeed;
 	// Use this for initialization
 	void Start ()
 	{
 		incSpeed = 5;
 		jSpeed = 15f;
-		fSpeed = 10f;
+		originalFSpeed = fSpeed = 10f;
 		rlSpeed = 10f;
 	}
 		
@@ -43,5 +44,10 @@ public class CarController : MonoBehaviour
 	public void IncreaseSpeed(){
 		fSpeed += incSpeed;
 		print ("Speed increased: " + fSpeed);
+	}
+	public void DecreaseSpeed(){
+		fSpeed -= incSpeed;
+		fSpeed = fSpeed < originalFSpeed ? originalFSpeed : fSpeed;
+		print ("Speed decreased: " + fSpeed);
 	}
 }

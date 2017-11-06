@@ -36,15 +36,24 @@ public class GameController : MonoBehaviour
 
 	void UpdateScore ()
 	{	
-		if (score > 0 && score % 50 == 0)
-			//Increase car speed
-			GameObject.FindWithTag ("Player").GetComponent <CarController> ().IncreaseSpeed ();
 		scoreText.text = "Score: " + score;
 	}
 
 	public void AddScore (int addValue)
 	{
 		score += addValue;
+		if (score % 50 == 0)
+			//Increase car speed
+			GameObject.FindWithTag ("Player").GetComponent <CarController> ().IncreaseSpeed ();
+		UpdateScore ();
+	}
+
+	public void SubtractScore (int subValue)
+	{
+		score -= subValue;
+		score = score < 0 ? 0 : score; 
+		//Decrease car speed
+		GameObject.FindWithTag ("Player").GetComponent <CarController> ().DecreaseSpeed ();
 		UpdateScore ();
 	}
 
