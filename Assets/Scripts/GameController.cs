@@ -10,10 +10,15 @@ public class GameController : MonoBehaviour
 	public Transform gameOverCanvas;
 	public Transform playCanvas;
 	public Transform titleCanvas;
+	public Transform howMenu;
+	public Transform creditsMenu;
 	public Text scoreText;
 
 	private bool paused;
+	private bool playing;
 	private bool muted;
+	private bool showHow;
+	private bool showCredits;
 	private int score;
 
 	// Use this for initialization
@@ -24,6 +29,10 @@ public class GameController : MonoBehaviour
 		 */
 		Time.timeScale = 0;
 		muted = false;
+		showHow = false;
+		showCredits = false;
+		howMenu.gameObject.SetActive (showHow);
+		creditsMenu.gameObject.SetActive (showCredits);
 		/*
 		 * Score related setup.
 		 */
@@ -33,13 +42,14 @@ public class GameController : MonoBehaviour
 		 * Pause menu related setup.
 		 */
 		paused = false;
+		playing = false;
 		pauseCanvas.gameObject.SetActive (paused);
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Input.GetKeyDown (KeyCode.Escape)) {
+		if (playing && Input.GetKeyDown (KeyCode.Escape)) {
 			Pause ();
 		}
 	}
@@ -71,7 +81,7 @@ public class GameController : MonoBehaviour
 	{
 		paused = !paused;
 		pauseCanvas.gameObject.SetActive (paused);
-		GameObject.FindWithTag ("CameraController").GetComponent <CameraController>().switchSound ();
+		GameObject.FindWithTag ("CameraController").GetComponent <CameraController> ().switchSound ();
 		Time.timeScale = paused ? 0 : 1;
 	}
 
@@ -89,27 +99,40 @@ public class GameController : MonoBehaviour
 	{
 		titleCanvas.gameObject.SetActive (false);
 		playCanvas.gameObject.SetActive (true);
-		GameObject.FindWithTag ("CameraController").GetComponent <CameraController>().switchSound ();
+		GameObject.FindWithTag ("CameraController").GetComponent <CameraController> ().switchSound ();
 		Time.timeScale = 1;
+		playing = true;
 	}
 
 	public void EndGame ()
 	{
 		gameOverCanvas.gameObject.SetActive (true);
 		playCanvas.gameObject.SetActive (false);
-		GameObject.FindWithTag ("CameraController").GetComponent <CameraController>().switchSound ();
+		GameObject.FindWithTag ("CameraController").GetComponent <CameraController> ().switchSound ();
 		Time.timeScale = 0;
+		playing = false;
 	}
 
 	public void Mute ()
 	{
 		muted = !muted;
-		AudioSource audio = GameObject.FindWithTag ("CameraController").GetComponent <AudioSource>();
+		AudioSource audio = GameObject.FindWithTag ("CameraController").GetComponent <AudioSource> ();
 		audio.mute = muted;
 		if (muted) {
 			audio.Pause ();
 		} else {
 			audio.Play ();
 		}
+	}
+
+	public void ShowHow ()
+	{
+		showHow = !showHow;
+		howMenu.gameObject.SetActive (showHow);
+	}
+	public void ShowCredits ()
+	{
+		showCredits = !showCredits;
+		creditsMenu.gameObject.SetActive (showCredits);
 	}
 }

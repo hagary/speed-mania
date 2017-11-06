@@ -8,6 +8,8 @@ TagManager:
   - TPS
   - FPS
   - CameraController
+  - HowMenu
+  - CreditsMenu
   layers:
   - Default
   - TransparentFX
