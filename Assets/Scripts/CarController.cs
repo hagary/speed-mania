@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
+	public AudioClip jumpClip;
+	public AudioClip coinClip;
+	public AudioClip obstacleClip;
+	public AudioClip radarClip;
+
 	private float originalFSpeed;
 	private float rlSpeed;
 	private float fSpeed;
@@ -39,15 +44,48 @@ public class CarController : MonoBehaviour
 		jump = jump * jSpeed * Time.deltaTime;
 
 		transform.Translate (moveHorizontal, jump, moveForward + jump);
+		if (Input.GetButtonDown ("Jump"))
+			soundEffect (Effect.JUMP);
 	}
 
-	public void IncreaseSpeed(){
+	public void soundEffect (Effect e)
+	{	
+		AudioClip clip = null;
+		switch (e) {
+		case Effect.JUMP:
+			clip = jumpClip;
+			break;
+		case Effect.COIN:
+			clip = coinClip;
+			break;
+		case Effect.OBSTACLE:
+			clip = obstacleClip;
+			break;
+		case Effect.RADAR:
+			clip = radarClip;
+			break;
+		}
+		GetComponent <AudioSource> ().PlayOneShot (clip);
+	}
+
+	public void IncreaseSpeed ()
+	{
 		fSpeed += incSpeed;
 		print ("Speed increased: " + fSpeed);
 	}
-	public void DecreaseSpeed(){
+
+	public void DecreaseSpeed ()
+	{
 		fSpeed -= incSpeed;
 		fSpeed = fSpeed < originalFSpeed ? originalFSpeed : fSpeed;
 		print ("Speed decreased: " + fSpeed);
 	}
+}
+
+public enum Effect
+{
+	JUMP,
+	COIN,
+	OBSTACLE,
+	RADAR
 }
