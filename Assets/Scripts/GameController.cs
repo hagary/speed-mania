@@ -8,13 +8,22 @@ public class GameController : MonoBehaviour
 {
 	public Transform pauseCanvas;
 	public Transform gameOverCanvas;
-	bool paused;
-
+	public Transform playCanvas;
+	public Transform titleCanvas;
 	public Text scoreText;
+
+	private bool paused;
+	private bool muted;
 	private int score;
+
 	// Use this for initialization
 	void Start ()
 	{	
+		/*
+		 * Game start setup.
+		 */
+		Time.timeScale = 0;
+		muted = false;
 		/*
 		 * Score related setup.
 		 */
@@ -73,12 +82,25 @@ public class GameController : MonoBehaviour
 	public void Restart ()
 	{
 		SceneManager.LoadScene ("Main");
+	}
+
+	public void StartGame ()
+	{
+		titleCanvas.gameObject.SetActive (false);
+		playCanvas.gameObject.SetActive (true);
 		Time.timeScale = 1;
 	}
 
 	public void EndGame ()
 	{
 		gameOverCanvas.gameObject.SetActive (true);
+		playCanvas.gameObject.SetActive (false);
 		Time.timeScale = 0;
+	}
+
+	public void Mute ()
+	{
+		muted = !muted;
+		AudioListener.volume = muted? 0: 1;
 	}
 }
